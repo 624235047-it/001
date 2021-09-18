@@ -178,26 +178,26 @@ app.get('/student/:studentId', function (req, res) {
 		});
 });
 
-app.post('/student', function (req, res) {
+app.post('/students', function (req, res) {
 
-	var studentId = Number(req.body.studentId);
-	var studentName = req.body.studentName;
+	var studentid = Number(req.body.studentid);
+	var studentname = req.body.studentname;
 
-	var referencePath = '/students/' + studentId + '/';
+	var referencePath = '/students/' + studentid + '/';
 
 	var studentsReference = db.ref(referencePath);
 
 	if (studentsReference != null) {
 
 		studentsReference.update({
-			studentId: studentId, studentName: studentName
+			studentid: studentid, studentname: studentname
 		},
 			function (error) {
 				if (error) {
 					res.send("data could not be saved. " + error)
 				}
 				else {
-					res.send("Success");
+					res.send("Success!!!");
 				}
 			});
 	}
