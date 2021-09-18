@@ -66,7 +66,9 @@ app.post('/plus', function (req, res) {
 	res.send('{ "result": ' + (num1 + num2) + '}');
 });
 
-app.post('/book', function (req, res) {
+
+
+app.post('/books', function (req, res) {
 
 	var author = req.body.author;
 	var bookid = Number(req.body.bookid);
@@ -97,7 +99,7 @@ app.post('/book', function (req, res) {
 					res.send("data could not be saved. " + error)
 				}
 				else {
-					res.send("Success");
+					res.send("Success!!");
 				}
 			});
 	}
@@ -216,6 +218,9 @@ app.delete('/student/:studentId', function (req, res) {
 	if (error) throw error;
 
 });
+
+
+
 
 app.delete('/book/:bookid', function (req, res) {
 
